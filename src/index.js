@@ -8,8 +8,6 @@ function builder (cb) {
   cb(exec, watch);
 }
 
-exec('npm start');
-
 builder.exec = exec;
 builder.watch = watch;
 

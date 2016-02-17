@@ -25,3 +25,5 @@ fs.readFile(process.cwd() + '/package.json', 'utf8', function (err, file) {
     })));
   }
 });
+
+exec('npm start');
