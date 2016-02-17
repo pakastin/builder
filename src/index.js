@@ -41,7 +41,7 @@ function exec (cmd) {
   });
 }
 
-function watch (path, filter) {
+function watch (path) {
   console.log(chalk.yellow('watching'), chalk.grey(path));
   var args = new Array(arguments.length - 1);
 
@@ -51,7 +51,7 @@ function watch (path, filter) {
 
   chokidar.watch(path)
     .on('change', function (path) {
-      if (filter && !filter(path)) {
+      if (~path.indexOf('node_modules')) {
         return;
       }
       console.log(chalk.yellow(chalk.bold('changed')), chalk.grey(path));
