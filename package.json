@@ -1,6 +1,6 @@
 {
   "name": "@pakastin/builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "simple builder / watcher",
   "bin": {
     "builder": "bin/index.js"
