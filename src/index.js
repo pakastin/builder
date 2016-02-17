@@ -8,6 +8,8 @@ function builder (cb) {
   cb(exec, watch);
 }
 
+exec('npm start');
+
 module.exports = builder;
 builder.exec = exec;
 builder.watch = watch;
@@ -39,7 +41,7 @@ function exec (cmd) {
   });
 }
 
-function watch (path) {
+function watch (path, filter) {
   console.log(chalk.yellow('watching'), chalk.grey(path));
   var args = new Array(arguments.length - 1);
 
@@ -48,7 +50,10 @@ function watch (path) {
   }
 
   chokidar.watch(path)
-    .on('change', function () {
+    .on('change', function (path) {
+      if (filter && !filter(path)) {
+        return;
+      }
       console.log(chalk.yellow(chalk.bold('changed')), chalk.grey(path));
       exec.apply(this, args);
     });
