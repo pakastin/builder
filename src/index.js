@@ -10,9 +10,10 @@ function builder (cb) {
 
 exec('npm start');
 
-module.exports = builder;
 builder.exec = exec;
 builder.watch = watch;
+
+module.exports = builder;
 
 function exec (cmd) {
   console.log(chalk.cyan('exec'), chalk.grey(cmd));
