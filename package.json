@@ -1,0 +1,18 @@
+{
+  "name": "@pakastin/builder",
+  "version": "0.0.1",
+  "description": "simple builder / watcher",
+  "bin": {
+    "builder": "bin/index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juha Lindstedt",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "~1.1.1",
+    "chokidar": "~1.4.2"
+  }
+}
